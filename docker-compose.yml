@@ -1,0 +1,21 @@
+services:
+  saleappback:
+    container_name: "saleappback"
+    restart: "always"
+    image: saleappback
+    user: root
+    depends_on:
+      - saleappdb
+    expose:
+      - 3000
+    ports:
+      - 3001:3000
+
+  saleappdb:
+    container_name: "saleappdb"
+    restart: "always"
+    image: saleappdb
+    envioroment:
+        - MYSQL_ROOT_PASSWORD= root # if you prefer, change the mysql root password here, before run the docker compose.
+    volumes:
+      - /app/saleapp/database:/var/lib/mysql
