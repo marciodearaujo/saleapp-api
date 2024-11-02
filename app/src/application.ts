@@ -25,7 +25,6 @@ export let DBConnectionConfig = {
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE
 };
-console.log(DBConnectionConfig)
 
 export class SaleappApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
