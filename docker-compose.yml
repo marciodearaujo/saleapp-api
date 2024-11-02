@@ -12,11 +12,11 @@ services:
       - 3001:3000
     env_file:
       - /etc/environment
-
   saleappdb:
     container_name: "saleappdb"
     restart: "always"
     image: saleappdb
     environment:
-        - MYSQL_ROOT_PASSWORD= root # if you prefer, change the mysql root password here, before run the docker compose.    volumes:
+        - MYSQL_ROOT_PASSWORD=root # if you prefer, change the mysql root password here, before run the docker compose.
+    volumes:
       - /app/saleappbackend/db/database:/var/lib/mysql
